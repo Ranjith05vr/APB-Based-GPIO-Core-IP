@@ -65,7 +65,7 @@ The top-level connects the APB interface to the GPIO register block, while the a
 ### Architecture
 
 <p align="center">
-  <img src="images/waveform.png" alt="APB GPIO Core architecture and simulation source figure" width="950">
+  <img src="images/arch.png" alt="APB GPIO Core architecture and simulation source figure" width="950">
 </p>
 
 <p align="center">
@@ -76,7 +76,7 @@ The top-level connects the APB interface to the GPIO register block, while the a
 The supplied design schematic also shows the interconnection of `APB_INTERFACE`, `GPIO_REGISTER`, `AUX_INTERFACE`, and `IO_INTERFACE` inside `gpio_core`.
 
 <p align="center">
-  <img src="images/arch.png" alt="GPIO CORE WAVEFORM" width="950">
+  <img src="images/waveform.png" alt="GPIO CORE WAVEFORM" width="950">
 </p>
 
 <p align="center">
