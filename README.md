@@ -64,59 +64,23 @@ The top-level connects the APB interface to the GPIO register block, while the a
 
 ### Architecture
 
-```text
-                         +----------------------+
- APB PADDR/PWDATA ------>|                      |
- PSEL/PENABLE/PWRITE --->|  APB SLAVE           |
- PCLK/PRESET ----------->|  INTERFACE           |
-                         |                      |
-                         +----------+-----------+
-                                    |
-                         gpio_addr / gpio_we
-                         gpio_dat_i / gpio_dat_o
-                                    |
-                                    v
-                         +----------------------+
-                         |                      |
- aux_in ---------------->| AUXILIARY INTERFACE |
-                         |                      |
-                         +----------+-----------+
-                                    |
-                                    v
-                         +----------------------+
-                         |                      |
-                         |    GPIO REGISTER     |
-                         |                      |
-                         |  Control Registers   |
-                         |  Input/Output Logic  |
-                         |  Interrupt Logic     |
-                         |  ECLK Sampling      |
-                         |                      |
-                         +----+------------+----+
-                              |            |
-                       out_pad_o       oen_padoe_o
-                              |            |
-                              +-----+------+
-                                    |
-                                    v
-                         +----------------------+
- ext_clk_pad_i --------->|     I/O INTERFACE   |
-                         |                      |
-                         |   32-bit io_pad     |
-                         +----------+-----------+
-                                    |
-                                    v
-                                io_pad[31:0]
-```
-
-The supplied design schematic also shows the interconnection of `APB_INTERFACE`, `GPIO_REGISTER`, `AUX_INTERFACE`, and `IO_INTERFACE` inside `gpio_core`.
-
 <p align="center">
   <img src="images/waveform.png" alt="APB GPIO Core architecture and simulation source figure" width="950">
 </p>
 
 <p align="center">
-  <b>Figure 1: APB-Based GPIO Core Architecture and Simulation Reference</b>
+  <b>Figure 1: APB-Based GPIO Core Architecture </b>
+</p>
+
+
+The supplied design schematic also shows the interconnection of `APB_INTERFACE`, `GPIO_REGISTER`, `AUX_INTERFACE`, and `IO_INTERFACE` inside `gpio_core`.
+
+<p align="center">
+  <img src="images/arch.png" alt="GPIO CORE WAVEFORM" width="950">
+</p>
+
+<p align="center">
+  <b>Figure 2: APB-Based GPIO Core Architecture and Simulation Reference</b>
 </p>
 
 ---
